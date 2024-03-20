@@ -16,4 +16,4 @@ Nesse projeto é possível realizar transações entre usuários, onde cada tran
 
 >É necessário ter o Java 17 instalado na maquina 
 >Executar o .Jar
->Chamadas para requisições porta 8080 (collection do postaman na pasta resources)
+>Chamadas para requisições porta 8080 (collection do postman na pasta resources)
