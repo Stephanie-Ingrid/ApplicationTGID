@@ -1,8 +1,6 @@
 package com.teste.TGID.service;
 
 
-import com.teste.TGID.dto.NotificationDTO;
-import com.teste.TGID.entity.Transaction;
 import com.teste.TGID.entity.Usuario;
 import com.teste.TGID.exception.IntegracaoWebhookException;
 import com.teste.TGID.exception.InternalServerErrorException;
@@ -21,14 +19,13 @@ public class NotificationService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public void envioNotificacao(Usuario usuario, Transaction transaction) throws Exception {
+    public void envioNotificacao(Usuario usuario, String transaction) throws Exception {
 
         try {
             String email = usuario.getEmail();
- //           NotificationDTO notificationRequest = new NotificationDTO(email);
 
             ResponseEntity<String> notificationResponse = restTemplate.postForEntity
-                    ("https://webhook.site/4bc22922-2d31-43f7-9fc5-fe938aa01e5d", transaction, String.class);
+                    ("https://webhook.site/93742b05-75b8-46e8-b0e9-39ca20b5d917", transaction, String.class);
 
             if ((notificationResponse.getStatusCode() == HttpStatus.OK)){
                 log.info("Notificação enviada");
